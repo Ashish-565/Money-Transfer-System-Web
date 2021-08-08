@@ -27,7 +27,7 @@ public class TransactionServlet extends HttpServlet{
 		
 		transferService.txr(fromAccount, toAccount, amount);
 
-//		resp.sendRedirect("history");
+		resp.sendRedirect("history");
 	}
 	
 }
