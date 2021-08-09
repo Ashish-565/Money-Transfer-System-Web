@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.service.TransferService;
 import com.revature.service.TransferServiceImpl;
 
-
 @SuppressWarnings("serial")
 @WebServlet(urlPatterns = { "/new-transaction" })
 public class TransactionServlet extends HttpServlet{
@@ -27,7 +26,7 @@ public class TransactionServlet extends HttpServlet{
 		
 		transferService.txr(fromAccount, toAccount, amount);
 
-		resp.sendRedirect("history");
+		resp.sendRedirect("transaction.html");
 	}
 	
 }

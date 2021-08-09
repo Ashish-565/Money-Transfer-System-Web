@@ -9,10 +9,10 @@ public interface TransactionRepository {
 
 	void save(Transaction transaction);
 	
-	List<Transaction> getTransaction();
+	List<Transaction> getTransaction(String account);
 	
-	List<Transaction> getTransaction(int limit);
+	List<Transaction> getTransaction(String account, int limit);
 
-	List<Transaction> getTransaction(Date fromDate, Date toDate);
+	List<Transaction> getTransaction(String account, Date fromDate, Date toDate);
 	
 }

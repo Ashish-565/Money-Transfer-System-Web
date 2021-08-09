@@ -13,20 +13,20 @@ import com.revature.entity.Transaction;
 import com.revature.repository.TransactionRepository;
 import com.revature.repository.TransactionRepositoryImpl;
 
+
 @SuppressWarnings("serial")
-@WebServlet(urlPatterns = { "/account-txr" })
-public class HistoryServlet extends HttpServlet{
+@WebServlet(urlPatterns = { "/limit-txr" })
+public class LimitTxrServlet extends HttpServlet{
 	
 	private TransactionRepository transactionRepository = new TransactionRepositoryImpl();
 	
-	static String account;
-	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		account = req.getParameter("account");
+		int limit = Integer.parseInt(req.getParameter("limit"));
 				
-		List<Transaction> txns = transactionRepository.getTransaction(account);
+		List<Transaction> txns = transactionRepository.getTransaction(HistoryServlet.account, limit);
 		
 		req.setAttribute("txns", txns);
 
